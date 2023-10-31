@@ -41,7 +41,7 @@ with publi_container:
 st.header("Intraschool Co-Authorship Network")
 ca_container = st.container()
 with ca_container:
-    min_publications = st.slider("Select minimum shared fields:",1,100)
+    min_publications = st.slider("Select minimum number of joint publications:",1,100)
     ca = scse.co_author_graph(scse.df,min_publications)
     ca.save_graph('graphs/ca_graph.html')
     HtmlFile = open('graphs/ca_graph.html', 'r', encoding='utf-8')
